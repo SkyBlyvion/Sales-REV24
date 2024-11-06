@@ -1,19 +1,37 @@
 table 51002 TypeOrigine
 {
-    DataClassification = ToBeClassified;
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1; MyField; Integer)
+        field(1; Code; Code[10])
         {
-            DataClassification = ToBeClassified;
-
+            DataClassification = CustomerContent;
+            Caption = 'Code';
+            ToolTip = 'Code';
+            Editable = true;
+        }
+        field(2; Désignation; Text[30])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Désignation';
+            ToolTip = 'Désignation';
+            Editable = true;
+        }
+        field(3; Nature; Option)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Nature';
+            ToolTip = 'Nature';
+            Editable = false;
+            BlankNumbers = DontBlank;
+            OptionMembers = " ","Commande","","Avoir",,;
         }
     }
 
     keys
     {
-        key(Key1; MyField)
+        key(PK; Nature, Code)
         {
             Clustered = true;
         }
@@ -25,7 +43,6 @@ table 51002 TypeOrigine
     }
 
     var
-        myInt: Integer;
 
     trigger OnInsert()
     begin
