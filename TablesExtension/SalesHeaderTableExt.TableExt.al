@@ -6,7 +6,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'bloqué';
             ToolTip = 'est bloqué';
-            Description = 'BLOCAGE LN 06/11/24 NSC1.11';
+            Description = 'BLOCAGE LN 06/11/24 REV24';
             Editable = false;
         }
 
@@ -14,7 +14,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Origine';
             ToolTip = 'Origine de la vente';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC1.11';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -23,7 +23,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Code famille client';
             ToolTip = 'Code famille du client';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC1.11';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -31,7 +31,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Remise Spéciale';
             ToolTip = 'Montant de la remise spéciale';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC1.11';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -39,7 +39,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Commentaires rem. spéciale';
             ToolTip = 'Commentaires pour la remise spéciale';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC1.11';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -47,7 +47,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Remise pour enlèvement';
             ToolTip = 'Remise pour l’enlèvement';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC1.11';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -55,7 +55,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'N° commande PalmWare';
             ToolTip = 'Numéro de commande PalmWare';
-            Description = 'PALMWARE LN 06/11/24 NSC1.07 Commande Palmware';
+            Description = 'PALMWARE LN 06/11/24 REV24 Commande Palmware';
             Editable = true;
         }
 
@@ -63,7 +63,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Avoir financier';
             ToolTip = 'Indique si un avoir financier est appliqué';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC1.11';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -71,7 +71,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Volume';
             ToolTip = 'Volume total de la commande';
-            Description = 'VOLUME_POIDS LN 06/11/24 NSC1.07';
+            Description = 'VOLUME_POIDS LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -79,7 +79,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Poids';
             ToolTip = 'Poids total de la commande';
-            Description = 'VOLUME_POIDS LN 06/11/24 NSC1.07';
+            Description = 'VOLUME_POIDS LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -87,7 +87,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Rés. à postérori dans Achat';
             ToolTip = 'Résolution à postérori dans Achat';
-            Description = 'ENTETE_VENTE SL 06/11/24 NSC1.14';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -95,7 +95,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Rés. annulées dans Achat';
             ToolTip = 'Résolutions annulées dans Achat';
-            Description = 'ENTETE_VENTE SL 06/11/24 NSC1.14';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -103,7 +103,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Utilisateur';
             ToolTip = 'Utilisateur de l’enregistrement';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC2.12';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -111,7 +111,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Reliquat';
             ToolTip = 'Reliquat de la commande';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC2.12';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -119,7 +119,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'SélectionReRéservationT';
             ToolTip = 'Sélection pour réservation';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC2.12';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -127,7 +127,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'BP édité';
             ToolTip = 'Bon de préparation édité';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC2.12';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -135,7 +135,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'AR édité';
             ToolTip = 'Accusé de réception édité';
-            Description = 'ENTETE_VENTE LN 06/11/24 NSC2.12';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -143,7 +143,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = '% escompte REVIMPORT';
             ToolTip = 'Pourcentage d’escompte REVIMPORT';
-            Description = 'ESCOMPTE_REVIMPORT LN 06/11/24 NSC2.19';
+            Description = 'ESCOMPTE_REVIMPORT LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -151,7 +151,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Cde triée';
             ToolTip = 'Commande triée';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.19';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -159,7 +159,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Date édition BP';
             ToolTip = 'Date d’édition du bon de préparation';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.19';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -167,7 +167,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Heure édition BP';
             ToolTip = 'Heure d’édition du bon de préparation';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.19';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -175,7 +175,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'N° Cde PalmWare';
             ToolTip = 'Numéro de commande PalmWare';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.30';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -183,7 +183,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Proforma';
             ToolTip = 'Indicateur de commande Proforma';
-            Description = 'PROFORMA CC 06/11/24 REV1.31';
+            Description = 'PROFORMA LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -191,7 +191,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Date envoi Proforma';
             ToolTip = 'Date d’envoi du Proforma';
-            Description = 'PROFORMA CC 06/11/24 REV1.31';
+            Description = 'PROFORMA LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -199,7 +199,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Paiement reçu';
             ToolTip = 'Date de réception du paiement';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.31';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -207,7 +207,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'N° Commande';
             ToolTip = 'Numéro de la commande';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.31';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -215,7 +215,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'N° client Revimex';
             ToolTip = 'Numéro du client Revimex';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.32';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -223,7 +223,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Code destinataire Revimex';
             ToolTip = 'Code destinataire Revimex';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.32';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -231,7 +231,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Nom client Revimex';
             ToolTip = 'Nom du client Revimex';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.32';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -239,7 +239,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Montant facture Revimex';
             ToolTip = 'Montant de la facture Revimex';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.32';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -247,7 +247,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'N° facture Revimex';
             ToolTip = 'Numéro de la facture Revimex';
-            Description = 'ENTETE_VENTE CC 06/11/24 REV1.32';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -255,7 +255,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Export Web';
             ToolTip = 'Indique si exporté sur le Web';
-            Description = 'WEB CC 06/11/24 REV4.14';
+            Description = 'WEB LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -263,7 +263,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Validée';
             ToolTip = 'Indique si la commande est validée';
-            Description = 'PREPARATION CC 06/11/24 REV4.16';
+            Description = 'PREPARATION LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -271,7 +271,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Obs validée';
             ToolTip = 'Observation validée';
-            Description = 'PREPARATION CC 06/11/24 REV4.16';
+            Description = 'PREPARATION LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -279,7 +279,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Préparation';
             ToolTip = 'Préparation de la commande';
-            Description = 'PREPARATION CC 06/11/24 REV4.18';
+            Description = 'PREPARATION LN 06/11/24 REV24';
             Editable = true;
         }
 
@@ -287,7 +287,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         {
             Caption = 'Total Outstanding Quantity';
             ToolTip = 'Quantité totale en attente';
-            Description = 'ENTETE_VENTE LN 06/11/24';
+            Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
     }
