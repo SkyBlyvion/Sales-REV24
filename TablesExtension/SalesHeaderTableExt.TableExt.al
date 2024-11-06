@@ -1,5 +1,6 @@
 tableextension 51001 SalesHeaderTableExt extends "Sales Header"
 {
+    /*TODO: Créer codeunit pour modifier les champs natifs et ajouter des triggers + custom logic */
     fields
     {
         field(50000; "Bloqué"; Boolean)

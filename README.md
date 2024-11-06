@@ -47,6 +47,8 @@ IdRanges :
     - permissionset 51003 "SalesPerms"
     - page 51004 "TypeOrigine"
     - enum 51005 NatureEnum
+    - tableextension 51006 "SalesLineTableExt" extends "Sales Line"
+
 
 
 ### Example Code Snippets
