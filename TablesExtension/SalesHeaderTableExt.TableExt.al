@@ -7,17 +7,17 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Caption = 'bloqué';
             ToolTip = 'est bloqué';
             Description = 'BLOCAGE LN 06/11/24 REV24';
+            BlankNumbers = DontBlank;
             Editable = false;
         }
-
         field(50001; "Origine"; Code[20])
         {
             Caption = 'Origine';
             ToolTip = 'Origine de la vente';
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
+            TableRelation = "TypeOrigine".Code where(Nature = field("Document Type"));
         }
-
         field(50004; "Code famille client"; Code[10])
         {
             Caption = 'Code famille client';
@@ -25,7 +25,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50005; "Remise Spéciale"; Decimal)
         {
             Caption = 'Remise Spéciale';
@@ -33,7 +32,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50006; "Commentaires rem. spéciale"; Text[35])
         {
             Caption = 'Commentaires rem. spéciale';
@@ -41,7 +39,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50007; "Remise pour enlèvement"; Decimal)
         {
             Caption = 'Remise pour enlèvement';
@@ -49,7 +46,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50008; "N° commande PalmWare"; Code[14])
         {
             Caption = 'N° commande PalmWare';
@@ -57,7 +53,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'PALMWARE LN 06/11/24 REV24 Commande Palmware';
             Editable = true;
         }
-
         field(50009; "Avoir financier"; Boolean)
         {
             Caption = 'Avoir financier';
@@ -65,7 +60,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50010; "Volume"; Decimal)
         {
             Caption = 'Volume';
@@ -73,7 +67,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'VOLUME_POIDS LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50011; "Poids"; Decimal)
         {
             Caption = 'Poids';
@@ -81,7 +74,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'VOLUME_POIDS LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50012; "Rés. à postérori dans Achat"; Boolean)
         {
             Caption = 'Rés. à postérori dans Achat';
@@ -89,7 +81,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50013; "Rés. annulées dans Achat"; Boolean)
         {
             Caption = 'Rés. annulées dans Achat';
@@ -97,7 +88,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50014; "Utilisateur"; Text[5])
         {
             Caption = 'Utilisateur';
@@ -105,7 +95,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50030; "Reliquat"; Boolean)
         {
             Caption = 'Reliquat';
@@ -113,7 +102,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50031; "SélectionReRéservationT"; Boolean)
         {
             Caption = 'SélectionReRéservationT';
@@ -121,7 +109,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50032; "BP édité"; Boolean)
         {
             Caption = 'BP édité';
@@ -129,7 +116,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50033; "AR édité"; Boolean)
         {
             Caption = 'AR édité';
@@ -137,7 +123,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50034; "% escompte REVIMPORT"; Decimal)
         {
             Caption = '% escompte REVIMPORT';
@@ -145,7 +130,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ESCOMPTE_REVIMPORT LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50035; "Cde triée"; Boolean)
         {
             Caption = 'Cde triée';
@@ -153,7 +137,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50036; "Date édition BP"; Date)
         {
             Caption = 'Date édition BP';
@@ -161,7 +144,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50037; "Heure édition BP"; Time)
         {
             Caption = 'Heure édition BP';
@@ -169,7 +151,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50038; "N° Cde PalmWare"; Text[14])
         {
             Caption = 'N° Cde PalmWare';
@@ -177,7 +158,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50039; "Proforma"; Boolean)
         {
             Caption = 'Proforma';
@@ -185,7 +165,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'PROFORMA LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50040; "Date envoi Proforma"; Date)
         {
             Caption = 'Date envoi Proforma';
@@ -193,7 +172,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'PROFORMA LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50041; "Paiement reçu"; Date)
         {
             Caption = 'Paiement reçu';
@@ -201,7 +179,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50042; "N° Commande"; Code[20])
         {
             Caption = 'N° Commande';
@@ -209,7 +186,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50043; "N° client Revimex"; Code[20])
         {
             Caption = 'N° client Revimex';
@@ -217,7 +193,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50044; "Code destinataire Revimex"; Code[10])
         {
             Caption = 'Code destinataire Revimex';
@@ -225,7 +200,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50045; "Nom client Revimex"; Text[30])
         {
             Caption = 'Nom client Revimex';
@@ -233,7 +207,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50046; "Montant facture Revimex"; Decimal)
         {
             Caption = 'Montant facture Revimex';
@@ -241,7 +214,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50047; "N° facture Revimex"; Code[20])
         {
             Caption = 'N° facture Revimex';
@@ -249,7 +221,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50048; "Export Web"; Boolean)
         {
             Caption = 'Export Web';
@@ -257,7 +228,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'WEB LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50049; "Validée"; Boolean)
         {
             Caption = 'Validée';
@@ -265,7 +235,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'PREPARATION LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50050; "Obs validée"; Text[80])
         {
             Caption = 'Obs validée';
@@ -273,7 +242,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'PREPARATION LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50051; "Préparation"; Text[80])
         {
             Caption = 'Préparation';
@@ -281,7 +249,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Description = 'PREPARATION LN 06/11/24 REV24';
             Editable = true;
         }
-
         field(50060; "Total Outstanding Quantity"; Decimal)
         {
             Caption = 'Total Outstanding Quantity';
