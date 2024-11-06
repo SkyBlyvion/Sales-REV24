@@ -2,7 +2,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
 {
     fields
     {
-        field(50000; Bloqué; Boolean)
+        field(50000; "Bloqué"; Boolean)
         {
             Caption = 'bloqué';
             ToolTip = 'est bloqué';
@@ -10,7 +10,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = false;
         }
 
-        field(50001; Origine; Code[20])
+        field(50001; "Origine"; Code[20])
         {
             Caption = 'Origine';
             ToolTip = 'Origine de la vente';
@@ -18,8 +18,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50004; Code famille client;
-            Code[10])
+        field(50004; "Code famille client"; Code[10])
         {
             Caption = 'Code famille client';
             ToolTip = 'Code famille du client';
@@ -27,7 +26,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50005; Remise Spéciale; Decimal)
+        field(50005; "Remise Spéciale"; Decimal)
         {
             Caption = 'Remise Spéciale';
             ToolTip = 'Montant de la remise spéciale';
@@ -35,7 +34,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50006; Commentaires rem. spéciale; Text[35])
+        field(50006; "Commentaires rem. spéciale"; Text[35])
         {
             Caption = 'Commentaires rem. spéciale';
             ToolTip = 'Commentaires pour la remise spéciale';
@@ -43,7 +42,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50007; Remise pour enlèvement; Decimal)
+        field(50007; "Remise pour enlèvement"; Decimal)
         {
             Caption = 'Remise pour enlèvement';
             ToolTip = 'Remise pour l’enlèvement';
@@ -51,7 +50,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50008; N° commande PalmWare; Code[14])
+        field(50008; "N° commande PalmWare"; Code[14])
         {
             Caption = 'N° commande PalmWare';
             ToolTip = 'Numéro de commande PalmWare';
@@ -59,7 +58,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50009; Avoir financier; Boolean)
+        field(50009; "Avoir financier"; Boolean)
         {
             Caption = 'Avoir financier';
             ToolTip = 'Indique si un avoir financier est appliqué';
@@ -67,7 +66,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50010; Volume; Decimal)
+        field(50010; "Volume"; Decimal)
         {
             Caption = 'Volume';
             ToolTip = 'Volume total de la commande';
@@ -75,7 +74,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50011; Poids; Decimal)
+        field(50011; "Poids"; Decimal)
         {
             Caption = 'Poids';
             ToolTip = 'Poids total de la commande';
@@ -83,7 +82,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50012; Rés. à postérori dans Achat; Boolean)
+        field(50012; "Rés. à postérori dans Achat"; Boolean)
         {
             Caption = 'Rés. à postérori dans Achat';
             ToolTip = 'Résolution à postérori dans Achat';
@@ -91,7 +90,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50013; Rés. annulées dans Achat; Boolean)
+        field(50013; "Rés. annulées dans Achat"; Boolean)
         {
             Caption = 'Rés. annulées dans Achat';
             ToolTip = 'Résolutions annulées dans Achat';
@@ -99,7 +98,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50014; Utilisateur; Text[5])
+        field(50014; "Utilisateur"; Text[5])
         {
             Caption = 'Utilisateur';
             ToolTip = 'Utilisateur de l’enregistrement';
@@ -107,7 +106,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50030; Reliquat; Boolean)
+        field(50030; "Reliquat"; Boolean)
         {
             Caption = 'Reliquat';
             ToolTip = 'Reliquat de la commande';
@@ -115,7 +114,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50031; SélectionReRéservationT; Boolean)
+        field(50031; "SélectionReRéservationT"; Boolean)
         {
             Caption = 'SélectionReRéservationT';
             ToolTip = 'Sélection pour réservation';
@@ -123,7 +122,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50032; BP édité; Boolean)
+        field(50032; "BP édité"; Boolean)
         {
             Caption = 'BP édité';
             ToolTip = 'Bon de préparation édité';
@@ -131,7 +130,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50033; AR édité; Boolean)
+        field(50033; "AR édité"; Boolean)
         {
             Caption = 'AR édité';
             ToolTip = 'Accusé de réception édité';
@@ -139,7 +138,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50034; % escompte REVIMPORT; Decimal)
+        field(50034; "% escompte REVIMPORT"; Decimal)
         {
             Caption = '% escompte REVIMPORT';
             ToolTip = 'Pourcentage d’escompte REVIMPORT';
@@ -147,7 +146,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50035; Cde triée; Boolean)
+        field(50035; "Cde triée"; Boolean)
         {
             Caption = 'Cde triée';
             ToolTip = 'Commande triée';
@@ -155,7 +154,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50036; Date édition BP; Date)
+        field(50036; "Date édition BP"; Date)
         {
             Caption = 'Date édition BP';
             ToolTip = 'Date d’édition du bon de préparation';
@@ -163,7 +162,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50037; Heure édition BP; Time)
+        field(50037; "Heure édition BP"; Time)
         {
             Caption = 'Heure édition BP';
             ToolTip = 'Heure d’édition du bon de préparation';
@@ -171,7 +170,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50038; N° Cde PalmWare; Text[14])
+        field(50038; "N° Cde PalmWare"; Text[14])
         {
             Caption = 'N° Cde PalmWare';
             ToolTip = 'Numéro de commande PalmWare';
@@ -179,7 +178,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50039; Proforma; Boolean)
+        field(50039; "Proforma"; Boolean)
         {
             Caption = 'Proforma';
             ToolTip = 'Indicateur de commande Proforma';
@@ -187,7 +186,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50040; Date envoi Proforma; Date)
+        field(50040; "Date envoi Proforma"; Date)
         {
             Caption = 'Date envoi Proforma';
             ToolTip = 'Date d’envoi du Proforma';
@@ -195,7 +194,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50041; Paiement reçu; Date)
+        field(50041; "Paiement reçu"; Date)
         {
             Caption = 'Paiement reçu';
             ToolTip = 'Date de réception du paiement';
@@ -203,7 +202,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50042; N° Commande; Code[20])
+        field(50042; "N° Commande"; Code[20])
         {
             Caption = 'N° Commande';
             ToolTip = 'Numéro de la commande';
@@ -211,7 +210,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50043; N° client Revimex; Code[20])
+        field(50043; "N° client Revimex"; Code[20])
         {
             Caption = 'N° client Revimex';
             ToolTip = 'Numéro du client Revimex';
@@ -219,7 +218,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50044; Code destinataire Revimex; Code[10])
+        field(50044; "Code destinataire Revimex"; Code[10])
         {
             Caption = 'Code destinataire Revimex';
             ToolTip = 'Code destinataire Revimex';
@@ -227,7 +226,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50045; Nom client Revimex; Text[30])
+        field(50045; "Nom client Revimex"; Text[30])
         {
             Caption = 'Nom client Revimex';
             ToolTip = 'Nom du client Revimex';
@@ -235,7 +234,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50046; Montant facture Revimex; Decimal)
+        field(50046; "Montant facture Revimex"; Decimal)
         {
             Caption = 'Montant facture Revimex';
             ToolTip = 'Montant de la facture Revimex';
@@ -243,7 +242,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50047; N° facture Revimex; Code[20])
+        field(50047; "N° facture Revimex"; Code[20])
         {
             Caption = 'N° facture Revimex';
             ToolTip = 'Numéro de la facture Revimex';
@@ -251,7 +250,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50048; Export Web; Boolean)
+        field(50048; "Export Web"; Boolean)
         {
             Caption = 'Export Web';
             ToolTip = 'Indique si exporté sur le Web';
@@ -259,7 +258,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50049; Validée; Boolean)
+        field(50049; "Validée"; Boolean)
         {
             Caption = 'Validée';
             ToolTip = 'Indique si la commande est validée';
@@ -267,7 +266,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50050; Obs validée; Text[80])
+        field(50050; "Obs validée"; Text[80])
         {
             Caption = 'Obs validée';
             ToolTip = 'Observation validée';
@@ -275,7 +274,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50051; Préparation; Text[80])
+        field(50051; "Préparation"; Text[80])
         {
             Caption = 'Préparation';
             ToolTip = 'Préparation de la commande';
@@ -283,7 +282,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             Editable = true;
         }
 
-        field(50060; Total Outstanding Quantity; Decimal)
+        field(50060; "Total Outstanding Quantity"; Decimal)
         {
             Caption = 'Total Outstanding Quantity';
             ToolTip = 'Quantité totale en attente';
