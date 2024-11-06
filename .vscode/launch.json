@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Microsoft cloud sandbox",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "server": "https://businesscentral.dynamics.com/96c980fb-e971-4245-a8c1-f8680d3274b8/Sandbox", // Updated with a region-specific URL
+            "tenant": "96c980fb-e971-4245-a8c1-f8680d3274b8", // Verify this ID
+            "schemaUpdateMode": "Synchronize",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "authentication": "AAD", // Added OAuth authentication
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "cfdb0bf0-5511-40ec-80cf-6f7f8f71eca4",
+  "name": "Sales",
+  "publisher": "Lopez Nicolas - REVIMPORT",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "Sales Header and Line",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "24.5.0.0",
+  "idRanges": [
+    {
+      "from": 51000,
+      "to": 51500
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
