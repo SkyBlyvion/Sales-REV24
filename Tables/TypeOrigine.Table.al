@@ -18,14 +18,14 @@ table 51002 TypeOrigine
             ToolTip = 'Désignation';
             Editable = true;
         }
-        field(3; Nature; Option)
+        field(3; Nature; Enum NatureEnum)
         {
             DataClassification = CustomerContent;
             Caption = 'Nature';
             ToolTip = 'Nature';
             Editable = false;
             BlankNumbers = DontBlank;
-            OptionMembers = " ","Commande","","Avoir",,;
+            //OptionMembers = " ","Commande","0","Avoir","2";
         }
     }
 
@@ -36,32 +36,4 @@ table 51002 TypeOrigine
             Clustered = true;
         }
     }
-
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-
-    var
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
 }

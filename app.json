@@ -2,7 +2,7 @@
   "id": "cfdb0bf0-5511-40ec-80cf-6f7f8f71eca4",
   "name": "Sales",
   "publisher": "Lopez Nicolas - REVIMPORT",
-  "version": "1.0.0.0",
+  "version": "1.0.0.1",
   "brief": "",
   "description": "Sales Header and Line",
   "privacyStatement": "",
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "14.0",
+  "runtime": "13.0",
   "features": [
     "NoImplicitWith"
   ]

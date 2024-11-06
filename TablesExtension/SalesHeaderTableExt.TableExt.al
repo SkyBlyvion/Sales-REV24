@@ -16,7 +16,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             ToolTip = 'Origine de la vente';
             Description = 'ENTETE_VENTE LN 06/11/24 REV24';
             Editable = true;
-            TableRelation = "TypeOrigine".Code where(Nature = field("Document Type"));
+            TableRelation = "TypeOrigine".Code where(Nature = field("Document Type")); // on utilise le Code de TypeOrigine
         }
         field(50004; "Code famille client"; Code[10])
         {
