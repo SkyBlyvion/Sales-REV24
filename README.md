@@ -38,6 +38,17 @@ Future updates will include additional functionality as the extension expands.
 
 Once installed, the Sales extension can be accessed directly from the Sales module in Business Central. You can manage and interact with Sales Headers and Sales Lines seamlessly.
 
+## Configuration
+
+IdRanges :
+    - 51000
+    - tableextension 51001 SalesHeaderTableExt extends "Sales Header"
+    - table 51002 TypeOrigine
+    - permissionset 51003 "SalesPerms"
+    - page 51004 "TypeOrigine"
+    - enum 51005 NatureEnum
+
+
 ### Example Code Snippets
 
 ```al
