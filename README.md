@@ -53,8 +53,8 @@ IdRanges :
     - table 51009 CommissionReprésentant
     - Page 51010 "CommisionRepresentant"
     - table 51011 "TypeRemise"
-    - 51012
-    - 51013
+    - page 51012 "TypeRemise"
+    - table 51013 "RecepisseTransport"
     - 51014
     - codeunit 51015 "ReservationEntryCustomField"
 

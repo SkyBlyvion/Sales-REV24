@@ -1,9 +1,9 @@
-page 51010 "CommisionRepresentant"
+page 51012 "TypeRemise"
 {
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "CommissionRepresentant";
+    SourceTable = TypeRemise;
 
     layout
     {

@@ -315,8 +315,12 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
     }
 
     var
+#pragma warning disable AA0137
+#pragma warning disable AA0074
+#pragma warning disable AA0470
+#pragma warning disable AA0021
         PrixUnitaire: Decimal;
-        ComRepresentant: Record "Commission représentant";
+        ComRepresentant: Record "CommissionRepresentant";
         Client: Record Customer;
         ParamStock: Record "Inventory Setup";
         LigVente3: Record "Sales Line";
@@ -328,12 +332,11 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
         EnTeteVente2: Record "Sales Header";
         EcrReserv2: Record "Reservation Entry";
         EcrReserv3: Record "Reservation Entry";
-        ArticleRemplacement: Record "Récépissé transport";
+        ArticleRemplacement: Record "RecepisseTransport";
         entier2: Enum "Sales Document Type"; // turn back into Integer if fail
         MajPUOk: Boolean;
         UpPriceForCopyDoc: Boolean;
         ReserveSalesLine: Codeunit "Sales Line-Reserve";
-
         TextLIGNE_VENTE01: Label 'Une réservation est en train d''être effectuée pour cet article\', Comment = 'FRF';
         TextLIGNE_VENTE02: Label 'Veuillez ressaisir la quantité ultérieurement pour mettre à ', Comment = 'FRF';
         TextLIGNE_VENTE03: Label ' jour', Comment = 'FRF';
@@ -351,12 +354,15 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
         TextLIGNE_VENTE15: Label 'PR', Comment = 'PR';
         TextLIGNE_VENTE16: Label 'ARCASOFT', Comment = 'ARCASOFT';
         TextLIGNE_VENTE17: Label 'HD', Comment = 'HD';
+#pragma warning restore
 
     procedure VerificationPrixNet()
     var
         ParamVente: Record "Sales & Receivables Setup";
         Art: Record "Item";
         SalesHeader: Record "Sales Header";
+        //PriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
+        PriceCalcMgtCstm: Codeunit "SalesPriceCalcMgtCustom";
         PrixUnit: Decimal;
         PrixTG: Decimal;
         PrixNet: Decimal;
@@ -364,8 +370,6 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
         RemisePrixNet: Boolean;
         BlocageCde: Boolean;
         ArticlePromo: Boolean;
-        PriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
-        PriceCalcMgtCstm: Codeunit "SalesPriceCalcMgtCustom";
     begin
         //VENTE_PRIX PC NSC1.03 Ajout fonction VerificationPrixNet
         //* Vérification du prix unitaire réel après remise

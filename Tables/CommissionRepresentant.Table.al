@@ -82,7 +82,7 @@ table 51009 CommissionRepresentant
 
     procedure CalculerCommission(CodeVendeur: Code[10]; "%RemiseLigne": Decimal; RFA: Boolean) Commission: Decimal
     var
-        TypeRemise: Record "Type Remise";
+        TypeRemise: Record "TypeRemise";
     begin
         Commission := 0;
         IF GET(CodeVendeur, TypeRemise.RetournerTypeRemise("%RemiseLigne", CodeVendeur, RFA), RFA) THEN
