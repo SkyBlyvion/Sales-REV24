@@ -1,6 +1,8 @@
 tableextension 51001 SalesHeaderTableExt extends "Sales Header"
 {
     /*TODO: Créer codeunit pour modifier les champs natifs et ajouter des triggers + custom logic */
+    // UpdateSalesLines(ChangedFieldName : Text[100];AskQuestion : Boolean)
+    // RecreateSalesLines(ChangedFieldName : Text[100])
     fields
     {
         field(50000; "Bloqué"; Boolean)
@@ -497,7 +499,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         LigneVente.SETRANGE("Document No.", "No.");
         IF LigneVente.FIND('-') THEN
             REPEAT
-                LigneVente.DeleteReservEntry;
+                LigneVente.DeleteReservEntry();
             UNTIL (LigneVente.NEXT() = 0);
 
     end;

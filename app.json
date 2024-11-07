@@ -16,6 +16,18 @@
       "name": "Hist PRT PRR, Prestat, Embarq, Avis, Dossr, Arrvge",
       "publisher": "Lopez Nicolas - REVIMPORT",
       "version": "1.0.7.2"
+    },
+    {
+      "id": "12eacc5c-c397-78fe-ad49-c030e45fcd3e",
+      "name": "ItemsExtensionsTables",
+      "publisher": "Lopez Nicolas",
+      "version": "1.0.4.6"
+    },
+    {
+      "id": "ed83dce1-d074-49ab-b7c4-27e0d75456fc",
+      "name": "TableExtCustomers",
+      "publisher": "Lopez Nicolas - REVIMPORT",
+      "version": "1.0.1.8"
     }
   ],
   "screenshots": [],
