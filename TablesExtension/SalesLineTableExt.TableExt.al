@@ -8,7 +8,18 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
             Caption = 'Bloqué';
             ToolTip = 'Indique si la ligne est bloquée';
             Description = 'BLOCAGE LN 06/11/24 REV24';
-            Editable = true;
+            Editable = false;
+            BlankNumbers = DontBlank;
+
+            trigger OnValidate()
+            begin
+                //BLOCAGE PC 01/10/99 NSC1.11 Gestion du blocage et du déblocage
+                IF Bloqué = FALSE THEN BEGIN
+                    EnTeteVente4.GET("Document Type", "Document No.");
+                    EnTeteVente4.DeblocageEntete("Line No.");
+                END;
+                //BLOCAGE PC 01/10/99 NSC1.11 Gestion du blocage et du déblocage
+            end;
         }
         field(50001; Promotion; Boolean)
         {
@@ -207,7 +218,42 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
     }
 
     var
-        myInt: Integer;
-}
+        PrixUnitaire: Decimal;
+        ComRepresentant: Record "Commission représentant";
+        Client: Record Customer;
+        ParamStock: Record "Inventory Setup";
+        LigVente3: Record "Sales Line";
+        CondProduit: Record "Item Variant";
+        EcrituresReservations: Record "Reservation Entry";
+        entier: Integer;
+        EnTeteVente4: Record "Sales Header";
+        DateTemp: Date;
+        EnTeteVente2: Record "Sales Header";
+        EcrReserv2: Record "Reservation Entry";
+        EcrReserv3: Record "Reservation Entry";
+        entier2: Integer;
+        ArticleRemplacement: Record "Récépissé transport";
+        MajPUOk: Boolean;
+        UpPriceForCopyDoc: Boolean;
 
-/******  5b624ad4-e0f0-4bca-b0fc-3b8a06dd481a  *******/
+        TextLIGNE_VENTE01: Label 'Une réservation est en train d''être effectuée pour cet article\', Comment = 'FRF';
+        TextLIGNE_VENTE02: Label 'Veuillez ressaisir la quantité ultérieurement pour mettre à ', Comment = 'FRF';
+        TextLIGNE_VENTE03: Label ' jour', Comment = 'FRF';
+        TextLIGNE_VENTE04: Label 'ESP', Comment = 'ESP';
+        TextLIGNE_VENTE05: Label 'AM', Comment = 'AM';
+        TextLIGNE_VENTE06: Label 'MCR', Comment = 'MCR';
+        TextLIGNE_VENTE07: Label 'CC', Comment = 'CC';
+        TextLIGNE_VENTE08: Label 'Le prix unitaire de l''article %1 est inférieur au prix net remisé ou au TG qui est de %2.', Comment = 'FRF';
+        TextLIGNE_VENTE09: Label 'Le prix unitaire de l''article %1 est supérieur au prix TG qui est de %2 ', Comment = 'FRF';
+        TextLIGNE_VENTE10: Label 'Le prix unitaire de l''article %1 est inférieur au prix net qui est de %2.', Comment = 'FRF';
+        TextLIGNE_VENTE11: Label 'Le document n° %1 n''existe pas. La réservation dans les ventes ne pas pas être effectuée', Comment = 'FRF';
+        TextLIGNE_VENTE12: Label 'Une réservation a été générée pour la commande de vente %1, article n° %2', Comment = 'FRF';
+        TextLIGNE_VENTE13: Label 'Il n''y a pas assez de quantité en stock\', Comment = 'FRF';
+        TextLIGNE_VENTE14: Label 'pour pouvoir livrer voulez vous modifier les réservations', Comment = 'FRF';
+        TextLIGNE_VENTE15: Label 'PR', Comment = 'PR';
+        TextLIGNE_VENTE16: Label 'ARCASOFT', Comment = 'ARCASOFT';
+        TextLIGNE_VENTE17: Label 'HD', Comment = 'HD';
+
+
+
+}

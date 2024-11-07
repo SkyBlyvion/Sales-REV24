@@ -10,7 +10,14 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "id": "6a9dc1c3-f34e-420a-af99-365af079266c",
+      "name": "Hist PRT PRR, Prestat, Embarq, Avis, Dossr, Arrvge",
+      "publisher": "Lopez Nicolas - REVIMPORT",
+      "version": "1.0.7.2"
+    }
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "24.5.0.0",

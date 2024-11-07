@@ -48,6 +48,7 @@ IdRanges :
     - page 51004 "TypeOrigine"
     - enum 51005 NatureEnum
     - tableextension 51006 "SalesLineTableExt" extends "Sales Line"
+    - codeunit 51007 "Revimport Reservation"
 
 
 
