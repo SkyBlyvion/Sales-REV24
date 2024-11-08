@@ -260,6 +260,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
                 //REVIMEX CC 22/09/04 REV1.32
                 IF ("No. client Revimex" <> xRec."No. client Revimex") THEN BEGIN
                     IF Clt2.GET("No. client Revimex") THEN
+# pragma warning disable AA0139
                         "Nom client Revimex" := Clt2.Name;
                     //RELIQUAT_REVIMEX CC 25/06/13 REV4.16 : modifier sur les lignes de vente
                     LigneVente.RESET();
@@ -281,6 +282,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
                 IF Page.RUNMODAL(50078, Clt2) = ACTION::LookupOK THEN BEGIN
                     "No. client Revimex" := Clt2."No.";
                     "Nom client Revimex" := Clt2.Name;
+# pragma warning restore
                 END;
                 //Fin REVIMEX CC 22/09/04 REV1.32
             end;
@@ -370,20 +372,23 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         LigneVente: Record "Sales Line";
         Clt2: Record "Customer";
         AdrDest2: Record "Ship-to Address";
-        PriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
+        //PriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
         CltVerifLimiteCredit2: Page "Check Credit Limit";
         LignesBloques: Boolean;
-        ReReserv: Boolean;
-        PreservePrixDisc: Boolean;
+        //ReReserv: Boolean;
+        //PreservePrixDisc: Boolean;
 
-        TextRESERVATION01: Label 'Voulez-vous lancer la fonction de reréservation ?';
-        TextRESERVATION02: Label 'Voulez-vous annuler toutes les réservations \associées à la commande courante : %1?';
-        TextRESERVATION03: Label 'La réservation ;%1; de ligne N° ;%2; a été affecter à ;%3; quantité ;%4';
-        TextRESERVATION04: Label 'Ecriture réservation N° ;%1; a été modifier ;%2; := ;%3; quantité ;%4';
+        //TextRESERVATION01: Label 'Voulez-vous lancer la fonction de reréservation ?';
+        //TextRESERVATION02: Label 'Voulez-vous annuler toutes les réservations \associées à la commande courante : %1?';
+        //TextRESERVATION03: Label 'La réservation ;%1; de ligne N° ;%2; a été affecter à ;%3; quantité ;%4';
+        //TextRESERVATION04: Label 'Ecriture réservation N° ;%1; a été modifier ;%2; := ;%3; quantité ;%4';
+# pragma warning disable AA0074
+# pragma warning disable AA0470
         TextRESERVATION05: Label 'Séléction des lignes de la commandes';
         TextRESERVATION06: Label '#1###################################\';
         TextRESERVATION07: Label '#2####################### #3#########';
         TextRESERVATION08: Label 'Traitement de la ligne :';
+# pragma warning restore
 
     procedure TrierLigneVenteParArticle()
     var
@@ -434,7 +439,7 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
         Fenetre: Dialog;
         Selection: Text;
         Traitement: Text;
-        AncRemise: Decimal;
+    //AncRemise: Decimal;
     begin
         //RESERVATION PC 01/10/99 NSC1.11 Création fonction ReservationTotal
         Selection := TextRESERVATION05;
@@ -476,7 +481,9 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             IF Bloqué THEN
                 //* Si bloqué par l'encours, ne pas débloqué
                 IF NOT CltVerifLimiteCredit2.SalesHeaderShowWarning(Rec) THEN BEGIN
+# pragma warning disable AA0206
                     LignesBloques := FALSE;
+# pragma warning restore
                     LigneVente.RESET();
                     LigneVente.SETRANGE("Document Type", "Document Type");
                     LigneVente.SETRANGE("Document No.", "No.");

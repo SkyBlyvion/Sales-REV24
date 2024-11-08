@@ -319,38 +319,37 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
 #pragma warning disable AA0074
 #pragma warning disable AA0470
 #pragma warning disable AA0021
-        PrixUnitaire: Decimal;
+        //PrixUnitaire: Decimal;
         ComRepresentant: Record "CommissionRepresentant";
         Client: Record Customer;
-        ParamStock: Record "Inventory Setup";
+        //ParamStock: Record "Inventory Setup";
         LigVente3: Record "Sales Line";
-        CondProduit: Record "Item Variant";
-        EcrituresReservations: Record "Reservation Entry";
-        entier: Integer;
+        //CondProduit: Record "Item Variant";
+        //EcrituresReservations: Record "Reservation Entry";
+        //entier: Integer;
         EnTeteVente4: Record "Sales Header";
-        DateTemp: Date;
+        //DateTemp: Date;
         EnTeteVente2: Record "Sales Header";
-        EcrReserv2: Record "Reservation Entry";
+        //EcrReserv2: Record "Reservation Entry";
         EcrReserv3: Record "Reservation Entry";
         //ArticleRemplacement: Record "RecepisseTransport";
         entier2: Enum "Sales Document Type"; // turn back into Integer if fail
-        MajPUOk: Boolean;
+        //MajPUOk: Boolean;
         UpPriceForCopyDoc: Boolean;
         ReserveSalesLine: Codeunit "Sales Line-Reserve";
-        TextLIGNE_VENTE01: Label 'Une réservation est en train d''être effectuée pour cet article\', Comment = 'FRF';
-        TextLIGNE_VENTE02: Label 'Veuillez ressaisir la quantité ultérieurement pour mettre à ', Comment = 'FRF';
-        TextLIGNE_VENTE03: Label ' jour', Comment = 'FRF';
-        TextLIGNE_VENTE04: Label 'ESP', Comment = 'ESP';
+        //TextLIGNE_VENTE01: Label 'Une réservation est en train d''être effectuée pour cet article\', Comment = 'FRF';
+        //TextLIGNE_VENTE02: Label 'Veuillez ressaisir la quantité ultérieurement pour mettre à ', Comment = 'FRF';
+        //TextLIGNE_VENTE03: Label ' jour', Comment = 'FRF';
+        //TextLIGNE_VENTE04: Label 'ESP', Comment = 'ESP';
         TextLIGNE_VENTE05: Label 'AM', Comment = 'AM';
         TextLIGNE_VENTE06: Label 'MCR', Comment = 'MCR';
         TextLIGNE_VENTE07: Label 'CC', Comment = 'CC';
-        TextLIGNE_VENTE08: Label 'Le prix unitaire de l''article %1 est inférieur au prix net remisé ou au TG qui est de %2.', Comment = 'FRF';
-        TextLIGNE_VENTE09: Label 'Le prix unitaire de l''article %1 est supérieur au prix TG qui est de %2 ', Comment = 'FRF';
-        TextLIGNE_VENTE10: Label 'Le prix unitaire de l''article %1 est inférieur au prix net qui est de %2.', Comment = 'FRF';
-        TextLIGNE_VENTE11: Label 'Le document n° %1 n''existe pas. La réservation dans les ventes ne pas pas être effectuée', Comment = 'FRF';
-        TextLIGNE_VENTE12: Label 'Une réservation a été générée pour la commande de vente %1, article n° %2', Comment = 'FRF';
-        TextLIGNE_VENTE13: Label 'Il n''y a pas assez de quantité en stock\', Comment = 'FRF';
-        TextLIGNE_VENTE14: Label 'pour pouvoir livrer voulez vous modifier les réservations', Comment = 'FRF';
+        //TextLIGNE_VENTE08: Label 'Le prix unitaire de l''article %1 est inférieur au prix net remisé ou au TG qui est de %2.', Comment = 'FRF';
+        //TextLIGNE_VENTE09: Label 'Le prix unitaire de l''article %1 est supérieur au prix TG qui est de %2 ', Comment = 'FRF';
+        //TextLIGNE_VENTE10: Label 'Le prix unitaire de l''article %1 est inférieur au prix net qui est de %2.', Comment = 'FRF';
+        //TextLIGNE_VENTE12: Label 'Une réservation a été générée pour la commande de vente %1, article n° %2', Comment = 'FRF';
+        //TextLIGNE_VENTE13: Label 'Il n''y a pas assez de quantité en stock\', Comment = 'FRF';
+        //TextLIGNE_VENTE14: Label 'pour pouvoir livrer voulez vous modifier les réservations', Comment = 'FRF';
         TextLIGNE_VENTE15: Label 'PR', Comment = 'PR';
         TextLIGNE_VENTE16: Label 'ARCASOFT', Comment = 'ARCASOFT';
         TextLIGNE_VENTE17: Label 'HD', Comment = 'HD';
@@ -458,8 +457,9 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
 
             IF Client.GET(EnTeteVente2."Sell-to Customer No.") THEN
                 "% Commission" :=
+# pragma warning disable AA0139
                 ComRepresentant.CalculerCommission(SalesHeader."Salesperson Code", "% remise REVIMPORT", Client."Soumis à R.F.A");
-
+# pragma warning restore 
 
             IF ("Document Type" <> "Document Type"::"Credit Memo") AND
                 (Type = Type::Item) THEN
@@ -494,12 +494,18 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
         LigAchat: Record "Purchase Line";
         //LigVente3: Record "Sales Line";
         EnteteVente3: Record "Sales Header";
+        ErrorMessage: Text[100]; // Temporary variable for substituted error message
+        TextLIGNE_VENTE11Err: Label 'Le document n° %1 n''existe pas. La réservation dans les ventes ne pas pas être effectuée', Comment = 'FRF, %1 represente le NoDoc';
+
     begin
 
         //RESERVATION PC 01/10/99 NSC1.11 Ajout Fonction ReserverdansventeDepuisAchat
-        IF NOT EnteteAchat.GET(EnteteAchat."Document Type"::Order, NoDoc) THEN
-            ERROR(STRSUBSTNO(TextLIGNE_VENTE11, NoDoc));
+        if not EnteteAchat.GET(EnteteAchat."Document Type"::Order, NoDoc) then begin
+            ErrorMessage := STRSUBSTNO(TextLIGNE_VENTE11Err, NoDoc); // Prepare the error message
+            Error(ErrorMessage); // Pass the message to Error
+        end;
 
+        // init and save filters
         LigAchat.RESET();
         LigAchat.SETCURRENTKEY("Document Type", Type, "No.", "Variant Code", "Drop Shipment", "Location Code", "Bin Code",
                             "Expected Receipt Date");
@@ -567,7 +573,9 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
 
     procedure RechPrixRemInitial(BoolTypePrixRem: Boolean) PrixRemInitial: Decimal
     var
+# pragma warning disable AA0237
         TempLigVente: Record "Sales Line";
+# pragma warning restore
     begin
         //LIGNE_VENTE DM 30/08/00 NSC2.27 Ajout fonction RechPrixRemInitial
         PrixRemInitial := 0;
@@ -603,7 +611,9 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
     procedure UpdatePriceForCopyDoc()
     begin
         //COPIE_DOCUMENT PC 09/05/07 NSC4.28 Ajout fonction UpdatePriceForCopyDoc
+# pragma warning disable AA0206
         UpPriceForCopyDoc := TRUE;
+# pragma warning restore
     end;
 
 }

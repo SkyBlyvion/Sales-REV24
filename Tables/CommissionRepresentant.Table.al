@@ -50,7 +50,9 @@ table 51009 CommissionRepresentant
             // Primary key combining salesperson code, discount type, and RFA status
         }
     }
+# pragma warning disable AA0245
     procedure CalculerCommission(CodeVendeur: Code[10]; "%RemiseLigne": Decimal; RFA: Boolean) Commission: Decimal
+# pragma warning restore
     var
         TypeRemise: Record "TypeRemise";
     begin
