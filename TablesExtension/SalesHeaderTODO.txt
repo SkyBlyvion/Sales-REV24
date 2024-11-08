@@ -1,0 +1,38 @@
+SalesHeader:
+
+    Trigger des champs Natifs:
+
+        OnInsert() -----------
+        Sell-to Customer No. - OnValidate()
+        Bill-to Customer No. - OnValidate() BLOCAGE CREATEDIM -----------
+        Shipment Date - OnValidate() -----------
+        Salesperson Code - OnValidate() BLOCAGE CREATEDIM -----------
+        Job No. - OnValidate() BLOCAGE CREATEDIM -----------
+        VAT Base Discount % - OnValidate() RECALCULER MONTANT -----------
+        Campaign No. - OnValidate() BLOCAGE CREATEDIM -----------
+        Bill-to Customer Template Code - OnValidate() BLOCAGE CREATEDIM -----------
+        Responsibility Center - OnValidate() BLOCAGE CREATEDIM -----------
+
+    Trigger des nouveau champs:
+
+        Origine - OnValidate() FAIT
+        N° commande PalmWare - OnValidate() FAIT
+        N° client Revimex - OnValidate() FAIT
+        N° client Revimex - OnLookup() FAIT
+        Code destinataire Revimex - OnLookup() FAIT
+
+
+    Modification des procédures natives: 
+
+        RecreateSalesLines(ChangedFieldName : Text[100]) -----------
+        UpdateSalesLines(ChangedFieldName : Text[100];AskQuestion : Boolean) -----------
+
+
+    Procedures ajouté par code:
+
+        TrierLigneVenteParArticle() FAIT
+        InitBloque() FAIT
+        Debloquer() FAIT
+        ReservationTotale() FAIT
+        DeblocageEntete(NumeroLigne : Integer) FAIT
+        CancelReservEntry() FAIT

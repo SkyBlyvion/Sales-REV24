@@ -1,0 +1,48 @@
+SalesLine:
+
+    Trigger des champs Natifs:
+
+        OnDelete() -----------
+        Type - OnValidate() -----------
+        No. - OnValidate() -----------
+        Quantity - OnValidate() -----------
+        Qty. to Ship - OnValidate() -----------
+        Unit Price - OnValidate() -----------
+        Line Discount % - OnValidate() -----------
+        Line Discount Amount - OnValidate() -----------
+        Customer Price Group - OnValidate() -----------
+        Variant Code - OnValidate() -----------
+        Unit of Measure Code - OnValidate() -----------
+        Quantity (Base) - OnValidate() -----------
+        Qty. to Invoice (Base) - OnValidate() -----------
+        Qty. to Ship (Base) - OnValidate() ----------- 
+
+
+    Trigger des nouveau champs:
+
+        Bloqué - OnValidate() FAIT
+        Quantité/Conditionnement - OnValidate() FAIT
+        Prix Unitaire (Pièce) - OnValidate() FAIT
+
+
+    Modification des procédures natives: 
+
+        InitOutstanding() -----------
+        InitQtyToShip() -----------
+        UpdateUnitPrice(CalledByFieldNo : Integer) -----------
+        UpdateAmounts() -----------
+        AutoReserve() -----------
+
+
+    Procedures ajouté par code:
+
+        VerificationPrixNet() FAIT
+        CalculerVolumePoids() FAIT
+        ReserverDansVenteDepuisAchat(NoDoc : Code[20];VAR JamaisTrouve : Boolean) FAIT
+        MAJDateDispoReserv() FAIT
+        AfficherArticleRemplacement() DISCONTINUED
+        RechPrixRemInitial(BoolTypePrixRem : Boolean) PrixRemInitial : Decimal   FAIT
+        DeleteReservEntry() FAIT
+        UpdatePriceForCopyDoc() FAIT
+
+        

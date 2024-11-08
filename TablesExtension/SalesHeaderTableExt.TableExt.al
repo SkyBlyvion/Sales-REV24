@@ -1,8 +1,182 @@
 tableextension 51001 SalesHeaderTableExt extends "Sales Header"
 {
-    /*TODO: Créer codeunit pour modifier les champs natifs et ajouter des triggers + custom logic */
-    // UpdateSalesLines(ChangedFieldName : Text[100];AskQuestion : Boolean)
-    // RecreateSalesLines(ChangedFieldName : Text[100])
+    /*TODO: Créer codeunit pour modifier les champs natifs et ajouter des triggers + custom logic 
+    
+        Documentation()
+        //ENTETE_VENTE PC 01/10/99 NSC1.02
+        Ajout champs :
+        - 50001 Origine
+        - 50004 "Code famille client"
+        - 50005 "Remise Spéciale"
+        - 50006 "Commentaires rem. spéciale"
+        - 50007 "Remise pour enlèvement"
+        - 50009 "Avoir financier"
+        Modification Name :
+        - 86 "Bill-to County" devient "Adresse 3ème ligne"
+        - 89 "Sell-to County" devient "Adresse donneur d'ordre 3"
+        - 92 "Ship-to County" devient "Adresse destinataire 3"
+        Ajout du code famille client sur l'entete vente
+
+        //BANQUE_EFFETS PC 03/03/99 BH2.01 Ajout champs (8000000 à 8000003)
+
+        //PALMWARE PC 16/08/99 NSC1.07  Commande Palmware
+        Ajout Champ : 50008 "N° commande PalmWare"
+        Ajout clés :
+        - "Document Type","N° Cde PalmWare"
+        - "Document Type","N° commande PalmWare"
+
+        //VOLUME_POIDS PC 16/08/99 NSC1.07 : Ajout champs :
+        - 50010 Volume
+        - 50011 Poids
+
+        //ENTETE_VENTE PC NSC1.09 Recalculer montant pour escompte seulement si montant <> 0
+
+        //ENTETE_VENTE PC 01/10/99 NSC1.11 Mettre par défaut la date d'expédition dans la date de livraison client
+
+        //RESERVATION PC 01/10/99 NSC1.11 
+        Ajout fonctions : 
+        - TrierLigneVenteParArticle
+        - AffectationNouveauNLigne
+        - ReservationTotale
+        - AnnulerEcrReservation - permet la cloturation de toutes les réservations liées à l'En-Tête
+        Modification Foncions :
+        - Suppression des Ecritures de réservations
+        - Suppression des réservations liées à la facture
+
+        //BLOCAGE PC 01/10/99 NSC1.11
+        Ajout champ : 50000 Bloqué
+        Ajoput clés :
+        - Bloqué
+        - Bloqué,"Document Type","Sell-to Customer No.",No.
+        Ajout fonction : 
+        - InitBloque
+        - DeblocageEntete
+        - Débloquer
+        Modification fonction : "Bill-To Customer No."  Blocage si Encours > solde client
+
+        //ENTETE_VENTE PC 21/10/99 NSC1.12 
+        Ne pas détruire les lignes de vente si on change de code destinataire sur l'entête
+        Modification du libelle du message
+        
+        //ENTETE_VENTE SL 14/12/99 NSC1.14 
+        Ajout champs :
+        - 50012 "Rés. à postérori dans Achat"
+        - 50013 "Rés. annulées dans Achat"
+        Correction calcul remise facture lors de la validation
+
+        //ENTETE_VENTE PC NSC1.25
+
+        //RESERVATION PC 10/01/00 NSC2.03
+
+        //ENTETE_VENTE PC 08/02/00 NSC2.12 
+        Ajout champs :
+        - 50014 Utilisateur
+        - 50030 Reliquat
+        - 50031 SélectionReRéservationT
+        - 50032 "BP édité"
+        - 50033 "AR édité"
+        Ajout clé : "Document Type","Order Date","No.","SélectionReRéservationT"
+        Désactivation de la demande de réaffectation des réservations
+
+        //RESERVATION PC 11/02/00 NSC2.13 DEBUG de la fonction de réservation de la commande
+
+        //BLOCAGE PC NSC2.18 Gestion Blocage Déblocage
+        Ajout fonction Debloquer
+        Modification Fonction : Déconnexion  du blocage pour encours (Mis en Com retour Standard)
+            
+        //RESERVATION PC NSC2.18
+        Modification fonction : 
+        - Amélioration de la fonction réservé commande
+
+        //ENTETE_VENTE PC 06/04/00 NSC2.19
+        Ajout d'une clef pour l'édition des bons de préparations
+        Ajout d'une fonction pour la modification des N° de ligne
+
+        //ESCOMPTE_REVIMPORT PC 06/04/00 NSC2.19 Ajout champ : 50034 "% escompte REVIMPORT"
+
+        //ENTETE_VENTE CC 12/05/00 REV1.19 Ajout champs :
+        - 50035 "Cde triée"
+        - 50036 "Date édition BP"
+        - 50037 "Heure édition BP"
+        
+        //ENTETE_VENTE DM 21/06/00 NSC2.25 Ajout du champ 50035 à la demande de Mr. CURTO
+        
+        //PALMWARE DM 13/09/00 NSC2.28
+        Ajout de la clef "Type document","N° commande PalmWare" pour accélérer l'import des lignes PalmWare
+        
+        //ENTETE_VENTE DM 04/10/00 NSC2.30
+        Gestion du champ "Cde triée"
+        Non réservation lorsque tout a été livré dans la fonction de réservation totale pour évite les
+        message du type "L'article X ne doit pas être bloqué"
+        
+        //RESERVATION DM 12/12/00 NSC2.31 Transfert de code sur réservation dans le CodeUnit 400
+
+        //ENTETE_VENTE DM 12/12/00 NSC2.31 : Désactivation de l'ancien code
+
+        //RESERVATION CC 08/02/01
+
+        //ENTETE_VENTE CC 29/03/01 REV1.22 : Valeur au 25 du mois
+
+        //ENTETE_VENTE DM 09/04/01 NSC2.34 Rétablissement de code suite à conversion en 2.60
+
+        //PROFORMA CC 10/06/04 REV1.31 Ajout champs :
+        - 50039 Proforma
+        - 50040 "Date envoi Proforma"
+
+        //ENTETE_VENTE CC 10/06/04 REV1.31 Ajout champs :
+        - 50041 "Paiement reçu"
+        - 50042 "N° Commande"
+
+        //ENTETE_VENTE CC 10/06/04 REV1.31 : Tester si "Faire Proforma"
+                        
+        //REVIMEX CC 22/09/04 REV1.32
+        Rajout confirmation création document
+        Ajout champs :
+        - 50043 "N° client Revimex"
+        - 50044 "Code destinataire Revimex"
+        - 50045 "Nom client Revimex"
+        - 50046 "Montant facture Revimex"
+        - 50047 "N° facture Revimex"
+
+        //MIGRATION_400 SC 18/10/05 NSC4.00 Migration et documentation
+
+        //BANQUE_EFFETS SC 18/10/05 BH2.01 Suppression champs (8000000 à 8000003)
+
+        //MIGRATION_400 SC 19/10/05 NSC4.00
+        - Suppression variable GestionReserv car CodeUnit 400 existe plus
+        - Mis en comm Std
+
+        //RESERVATION PC 24/03/06 NSC4.00 :
+        Suppression fonction AnnulerEcrReservation
+        Ajout fonction CancelReservEntry
+
+        //ENTETE_VENTE PC 27/03/06 Ajout champ 50060 "Total Outstanding Quantity"
+
+        //RESERVATION PC 04/07/06 NSC4.00 :
+        Transfert code fonction TrierLigneVenteParArticle vers CodeUnit 50031
+        Suppression fonction AffectationNouveauNLigne
+
+        //ENTETE_VENTE SC 27/07/06 NSC4.00 Modification tableRelation champ 104 "Payment Method Code"
+
+        //RESERVATION SC 03/01/07 NSC4.06 Correctif migration
+
+        //ENTETE_VENTE PC 15/01/07 NSC4.16 Calcul prix lignes ventes si modification N° client
+
+        //ENTETE_VENTE SC 26/03/07 NSC4.24 Calcul prix lignes ventes si modif N° client
+
+        //ENTETE_VENTE SC 30/03/07 NSC4.25 Calcul prix lignes ventes si modif N° client - le PU n'est pas le bon
+
+        //ENTETE_VENTE SC 03/04/07 NSC4.26 Prise en compte des restriction sur USER mis en place par CC
+
+        //ENTETE_VENTE PC 10/05/07 NSC4.28 Calcul prix lignes ventes si modif N° client - Validate sur quantité
+
+        //ENTETE_VENTE SC 30/08/07 NSC4.31 Maj Qtés pieces
+
+        //BLOCAGE CC 23/06/08 REV4.11 : problème de blocage sur la table Analytique document
+
+        //RELIQUAT_REVIMEX CC 25/06/13 REV4.16 : modifier sur les lignes de vente
+    */
+
     fields
     {
         field(50000; "Bloqué"; Boolean)
