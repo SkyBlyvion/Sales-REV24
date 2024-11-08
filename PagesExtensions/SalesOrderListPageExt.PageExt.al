@@ -3,7 +3,7 @@ pageextension 51016 "SalesOrderListPageExt" extends "Sales Order List"
     // Modifie la présentation de la page "Sales Order List" afin d'ajouter nos champs et cacher les champs non utiles.
     layout
     {
-        addbefore("No.")
+        addafter("No.")
         {
             // Add changes to page content here
             field("Bloqué"; Rec."Bloqué")

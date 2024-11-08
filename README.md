@@ -58,6 +58,12 @@ IdRanges :
     - tableextension 51014 "SalesRcvbleSetupTableExt" extends "Sales & Receivables Setup"
     - codeunit 51015 "ReservationEntryCustomField"
     - pageextension 51016 "SalesOrderListPageExt" extends "Sales Order List"
+    -
+    -
+    -
+    -
+    -
+    
 
 
 
