@@ -468,7 +468,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             UNTIL RechLigneVente.NEXT() = 0;
     end;
 
-
     procedure DeblocageEntete(NumeroLigne: Integer)
     begin
         //BLOCAGE PC 01/10/99 NSC1.11 Ajout fonction DeblocageEntete
@@ -490,7 +489,6 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
                 END;
     END;
 
-
     procedure CancelReservEntry()
     begin
         //RESERVATION PC 24/03/06 NSC4.00 Ajout fonction AnnulerEcrReservation
@@ -503,8 +501,4 @@ tableextension 51001 SalesHeaderTableExt extends "Sales Header"
             UNTIL (LigneVente.NEXT() = 0);
 
     end;
-
-
-
-
 }

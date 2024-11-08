@@ -1,7 +1,6 @@
 table 51009 CommissionRepresentant
 {
     DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Code Vendeur"; Code[10])
@@ -43,50 +42,22 @@ table 51009 CommissionRepresentant
             MaxValue = 100;
         }
     }
-
     keys
     {
         key(PK; "Code Vendeur", "Type remise", "RFA")
         {
             Clustered = true;
+            // Primary key combining salesperson code, discount type, and RFA status
         }
     }
-
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-
-    var
-        myInt: Integer;
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
     procedure CalculerCommission(CodeVendeur: Code[10]; "%RemiseLigne": Decimal; RFA: Boolean) Commission: Decimal
     var
         TypeRemise: Record "TypeRemise";
     begin
         Commission := 0;
+        // Initialize commission to zero
         IF GET(CodeVendeur, TypeRemise.RetournerTypeRemise("%RemiseLigne", CodeVendeur, RFA), RFA) THEN
             Commission := "% commision";
+        // Calculate commission based on retrieved data
     end;
-
 }

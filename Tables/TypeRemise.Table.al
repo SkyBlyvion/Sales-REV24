@@ -2,7 +2,10 @@ table 51011 "TypeRemise"
 {
     /*
         Documentation()
-        //* NSC2.07 : Il faut se référer à la liste des types de remise du vendeur */
+        //* NSC2.07 : Il faut se référer à la liste des types de remise du vendeur .
+        // Permet de calculer les commissions et type de remise.
+        
+    */
 
     DataClassification = CustomerContent;
 
@@ -67,12 +70,6 @@ table 51011 "TypeRemise"
             Clustered = true;
         }
     }
-
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-
 
     procedure RetournerTypeRemise(Remise: Decimal; "Code Vendeur": Code[20]; RFA: Boolean) TypeRemise: Code[15]
     var

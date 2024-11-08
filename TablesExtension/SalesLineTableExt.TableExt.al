@@ -315,7 +315,7 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
     }
 
     var
-#pragma warning disable AA0137
+        //#pragma warning disable AA0137
 #pragma warning disable AA0074
 #pragma warning disable AA0470
 #pragma warning disable AA0021
@@ -332,7 +332,7 @@ tableextension 51006 "SalesLineTableExt" extends "Sales Line"
         EnTeteVente2: Record "Sales Header";
         EcrReserv2: Record "Reservation Entry";
         EcrReserv3: Record "Reservation Entry";
-        ArticleRemplacement: Record "RecepisseTransport";
+        //ArticleRemplacement: Record "RecepisseTransport";
         entier2: Enum "Sales Document Type"; // turn back into Integer if fail
         MajPUOk: Boolean;
         UpPriceForCopyDoc: Boolean;

@@ -4,6 +4,5 @@ permissionset 51003 "SalesPerms"
     Permissions =
         tabledata "TypeOrigine" = RIMD,
         tabledata "CommissionRepresentant" = RIMD,
-        tabledata "TypeRemise" = RIMD,
-        tabledata "RecepisseTransport" = RIMD;
+        tabledata "TypeRemise" = RIMD;
 }
