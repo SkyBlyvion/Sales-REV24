@@ -4,6 +4,7 @@ page 51012 "TypeRemise"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = TypeRemise;
+    //TODO: faire page
 
     layout
     {

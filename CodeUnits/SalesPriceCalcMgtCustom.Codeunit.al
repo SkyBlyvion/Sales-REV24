@@ -3,10 +3,13 @@ codeunit 51008 "SalesPriceCalcMgtCustom"
     procedure FindSalesLinePrice2(SalesHeader: Record "Sales Header"; SalesLine: Record "Sales Line"; var PrixTG: Decimal; var PrixNet: Decimal; var RemisePrixNet: Boolean)
     var
         Item: Record Item;
+#pragma warning disable AL0432
+#pragma warning disable AA0237
         TempSalesPrice: Record "Sales Price";
         SalesPriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
         FoundSalesPrice: Boolean;
         PricesInCurrency: Boolean;
+#pragma warning restore
     begin
         // VENTE_PRIX PC 03/03/06 NSC4.00 Ajout fonction FindSalesLinePrice2
         // * Copie fonction standard FindSalesLinePrice
@@ -20,7 +23,9 @@ codeunit 51008 "SalesPriceCalcMgtCustom"
         SalesPriceCalcMgt.SetVAT(
             SalesHeader."Prices Including VAT",
             SalesLine."VAT %",
+#pragma warning disable AL0603
             SalesLine."VAT Calculation Type",
+#pragma warning restore
             SalesLine."VAT Bus. Posting Group");
 
         SalesPriceCalcMgt.SetUoM(ABS(SalesLine.Quantity), SalesLine."Qty. per Unit of Measure");
@@ -49,8 +54,10 @@ codeunit 51008 "SalesPriceCalcMgtCustom"
 
                     // * Récupération des infos Revimport
                     PrixTG := TempSalesPrice."Unit Price";
+#pragma warning disable AL0432
                     PrixNet := TempSalesPrice."Prix net";
                     RemisePrixNet := TempSalesPrice."Remise prix net";
+#pragma warning restore
                 end;
         end;
     end;

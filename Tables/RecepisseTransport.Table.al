@@ -37,7 +37,7 @@ table 51013 "RecepisseTransport"
             Description = 'RECEPISSE_TRANSPORT LN 07/11/24 REV24';
             Editable = true;
         }
-    }
+    } //TODO:Finir table
 
     keys
     {

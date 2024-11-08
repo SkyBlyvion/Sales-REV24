@@ -66,7 +66,9 @@ codeunit 51007 "Revimport Reservation"
                     PrecArticle := LigneVenteATrier."No.";
                 IF (LigneVenteATrier."No." = '') AND (PrecArticle <> '') THEN BEGIN
                     LigneVenteATrier."No." := PrecArticle;
+#pragma warning disable AA0139
                     LigneVenteATrier."Description 2" := LigneVenteATrier."Description 2" + '/*-+-*/';
+#pragma warning restore 
                     LigneVenteATrier.MODIFY();
                     // {
                     // mess := STRSUBSTNO('La ligne N° ;%1; a été détecter comme étant un commentaire', LigneVenteATrier."Line No.");

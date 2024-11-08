@@ -4,6 +4,7 @@ page 51010 "CommisionRepresentant"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "CommissionRepresentant";
+    //TODO: faire page
 
     layout
     {
