@@ -2,7 +2,7 @@
   "id": "cfdb0bf0-5511-40ec-80cf-6f7f8f71eca4",
   "name": "Sales Extension",
   "publisher": "Lopez Nicolas - REVIMPORT",
-  "version": "1.0.0.2",
+  "version": "1.0.0.3",
   "brief": "3 dependencies: Embarquements, ItemsExtensionsTables, TableExtCustomers",
   "description": "Sales Header, Line, Order, OrderSubForm, SalesReceivableSetup, TypeOrigine, TypeRemise",
   "privacyStatement": "",

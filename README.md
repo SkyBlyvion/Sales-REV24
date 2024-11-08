@@ -50,13 +50,14 @@ IdRanges :
     - tableextension 51006 "SalesLineTableExt" extends "Sales Line"
     - codeunit 51007 "Revimport Reservation"
     - codeunit 51008 "SalesPriceCalcMgtCustom"
-    - 51009 
-    - 51010 
+    - table 51009 CommissionRepresentant
+    - page 51010 "CommissionRepresentant"
     - table 51011 "TypeRemise"
     - page 51012 "TypeRemise"
-    - table 51013 "RecepisseTransport"
-    - 51014
+    - pageextension 51013 "SalesRcvbleSetupPageExt" extends "Sales & Receivables Setup"
+    - tableextension 51014 "SalesRcvbleSetupTableExt" extends "Sales & Receivables Setup"
     - codeunit 51015 "ReservationEntryCustomField"
+    - pageextension 51016 "SalesOrderListPageExt" extends "Sales Order List"
 
 
 
