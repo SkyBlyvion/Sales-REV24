@@ -1,5 +1,6 @@
 codeunit 51008 "SalesPriceCalcMgtCustom"
 {
+    // Appel de la procedure dans procedure VerificationPrixNet() depuis la table "SalesLineTableExt" qui extends Sales Line
     procedure FindSalesLinePrice2(SalesHeader: Record "Sales Header"; SalesLine: Record "Sales Line"; var PrixTG: Decimal; var PrixNet: Decimal; var RemisePrixNet: Boolean)
     var
         Item: Record Item;

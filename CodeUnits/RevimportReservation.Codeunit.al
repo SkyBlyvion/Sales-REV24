@@ -8,6 +8,7 @@ codeunit 51007 "Revimport Reservation"
     *  Ajout fonction TrierLigneVenteParArticle
     *
     *  07/11/24 Création du Codeunit en AL
+    *  This codeunit is designed to handle the reservation and sorting logic for sales lines related to purchase entries.
     */
     var
 

@@ -1,5 +1,7 @@
 codeunit 51015 "ReservationEntryCustomField"
 {
+    // From ReservationEntry Table where Field = Expected Receipt Date - OnValidate()
+    // Reservation Entry Custom Fields are added by the extension "Hist PRT PRR, Prestat, Embarq, Avis, Dossr, Arrvge".
     // OnAfterModifyEvent for Reservation Entry
     [EventSubscriber(ObjectType::Table, Database::"Reservation Entry", 'OnAfterModifyEvent', '', true, true)] // Passer en OnAfterValidate si erreur
     local procedure OnAfterModifyReservationEntry(var Rec: Record "Reservation Entry"; xRec: Record "Reservation Entry"; RunTrigger: Boolean)
